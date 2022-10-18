@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+    name: book-pod
+    labels:
+      app: book
+spec:
+    containers:
+      - name: bookservice
+        image: gcr.io/smart-axe-359507/bookservice

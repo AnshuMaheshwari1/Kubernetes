@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: book-deployment
+  labels:
+    app: book-deployment-app
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: book
+  template:
+    metadata:
+      labels:
+        app: book
+    spec:
+      containers:
+      - name: book-conatiner
+        image: gcr.io/smart-axe-359507/bookservice
+        ports:
+          - containerPort: 8070
